@@ -81,4 +81,15 @@ public class CustomList extends ArrayAdapter<City> {
         }
         return false;
     };
+
+    /**
+     * Removes all occurrences of a given city in the city list
+     * If the city is not found in the list an IllegalArgumentException
+     * is thrown
+     * @param city This is the city to remove from the city list
+     * @throws IllegalArgumentException
+     */
+    public void delete(City city){
+
+    };
 }
