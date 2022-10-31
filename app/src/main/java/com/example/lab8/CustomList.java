@@ -90,6 +90,20 @@ public class CustomList extends ArrayAdapter<City> {
      * @throws IllegalArgumentException
      */
     public void delete(City city){
-
+        if (city == null){
+            throw new IllegalArgumentException();
+        }
+        boolean found = false;
+        for (int i = 0; i< cities.size() ; i++) {
+            City cityItem = cities.get(i);
+            if (city.getCityName() == cityItem.getCityName() &&
+                    city.getProvinceName() == cityItem.getProvinceName()) {
+                found = true;
+                cities.remove(i);
+            }
+        }
+        if (!found){
+            throw new IllegalArgumentException();
+        }
     };
 }
