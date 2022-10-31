@@ -69,6 +69,16 @@ public class CustomList extends ArrayAdapter<City> {
      * @return true if the city was found and false otherwise
      */
     public boolean hasCity(City city){
-        
+        if (city == null){
+            return false;
+        }
+        for (int i = 0; i< cities.size() ; i++) {
+            City cityItem = cities.get(i);
+            if (city.getCityName() == cityItem.getCityName() &&
+                    city.getProvinceName() == cityItem.getProvinceName()) {
+                return true;
+            }
+        }
+        return false;
     };
 }
